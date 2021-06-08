@@ -18,7 +18,7 @@
         </nav>
         <main>
             <div class="card_container">
-                <div class="card" v-for="film in films">  
+                <div class="film_card" v-for="film in films">  
                     <h2>{{film.title}}</h2>
                     <h3>{{film.original_title}}</h3>
                     <h4>{{film.original_language}}</h4>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="tv_container">
-                <div class="card" v-for="serie in series">  
+                <div class="series_card" v-for="serie in series">  
                     <h2>{{serie.name}}</h2>
                     <h3>{{serie.original_name}}</h3>
                     <h4>{{serie.original_language}}</h4>

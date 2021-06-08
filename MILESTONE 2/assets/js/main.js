@@ -24,10 +24,7 @@ const app = new Vue({
            })
 
         },
-       /*  cercaSerie: function(){
 
-        }
-        */
     },
     mounted(){
      
