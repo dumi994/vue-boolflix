@@ -20,9 +20,11 @@
             <div class="card_container">
                 <div class="film_card" v-for="film in films">  
                     <h2>{{film.title}}</h2>
+                    <h2 v-if="film.title != film.original_title">{{film.original_title}}</h2>
                     <h3>{{film.original_title}}</h3>
                     <h4>{{film.original_language}}</h4>
                     <h3>{{film.vote_average}}</h3>
+                    <img :src="'https:www.countryflags.io/' + film.original_language + '/shiny/32.png'">
                     
                 </div>
             </div>
@@ -32,6 +34,8 @@
                     <h3>{{serie.original_name}}</h3>
                     <h4>{{serie.original_language}}</h4>
                     <h3>{{serie.vote_average}}</h3>
+                     <img :src="'https:www.countryflags.io/' + serie.original_language + '/shiny/32.png'">
+
                 </div>
             </div>
             

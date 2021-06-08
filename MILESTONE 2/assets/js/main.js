@@ -6,6 +6,7 @@ const app = new Vue({
         films: " ",
         query: " ",
         series: " ",
+        flagImg:'https://www.countryflags.io/',
     },
     methods:{
         //FUNZIONE PER LA RICERCA DEL TITOLO DEL FILM
@@ -15,13 +16,17 @@ const app = new Vue({
                  
                  console.log(response.data.results);
                  this.films = response.data.results;
+                 /* this.flag = response.data.results.original_language
+                axios.get(`https://www.countryflags.io/${flag}/flat/64.png`) */
             }),
+            //CERCA SERIE
             axios.get(`${this.uri}/search/tv?api_key=${this.api_key}&query=${this.query}`)
             .then (resp =>{
                 
                 console.log(resp.data.results);
                 this.series = resp.data.results;
            })
+           
 
         },
 
