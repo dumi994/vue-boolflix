@@ -12,7 +12,7 @@ const app = new Vue({
              .then (response =>{
                  
                  console.log(response.data.results);
-                 this.films = this.response.data.results;
+                 this.films = response.data.results;
             })
 
         }
