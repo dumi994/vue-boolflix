@@ -16,8 +16,7 @@ const app = new Vue({
                  
                  console.log(response.data.results);
                  this.films = response.data.results;
-                 /* this.flag = response.data.results.original_language
-                axios.get(`https://www.countryflags.io/${flag}/flat/64.png`) */
+                
             }),
             //CERCA SERIE
             axios.get(`${this.uri}/search/tv?api_key=${this.api_key}&query=${this.query}`)
