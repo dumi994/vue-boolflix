@@ -12,12 +12,14 @@
         <nav class="navigator">
             <img src="netflix.png" alt="">
             <form id="form" class="cerca"> 
-                <input type="search" id="query" name="q" placeholder="Cerca film o serie tv">
-                <button>Cerca</button>
+                <input type="search" id="query1" v-model="query" name="q" placeholder="Cerca film o serie tv">
+                <button @click="cercaFilm">Cerca</button>
               </form>
         </nav>
         <main>
-
+            <div class="card" v-for="film in films">
+                <h2>{{film.title}}</h2>
+            </div>
         </main>
     </div>
 
