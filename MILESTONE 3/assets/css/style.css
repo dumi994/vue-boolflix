@@ -52,6 +52,7 @@ main{
 .frontCard img{
     width:100%;
     height: 100%;
+    object-fit: cover;
 }
 .frontCard:hover{
    display: none;
@@ -60,7 +61,15 @@ main{
 .hoverCard{
     display: none;
 }
-.hoverCard:hover{
+.film_card:hover .hoverCard{
     display: inline-block;
 }
+/* .hoverCard:hover {
+    
+    visibility: visible;
+} */
+.film_card:hover, .frontCard{
+    display: block;
+}
+
 
