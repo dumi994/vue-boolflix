@@ -54,15 +54,15 @@ main{
     height: 100%;
     object-fit: cover;
 }
-.frontCard:hover{
+.film_card:hover .frontCard{
    display: none;
 }
 
-.hoverCard{
+/* .hoverCard{
     display: none;
-}
+} */
 .film_card:hover .hoverCard{
-    display: inline-block;
+    display: block;
 }
 /* .hoverCard:hover {
     
