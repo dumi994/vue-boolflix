@@ -58,17 +58,8 @@ main{
    display: none;
 }
 
-/* .hoverCard{
-    display: none;
-} */
-.film_card:hover .hoverCard{
-    display: block;
-}
-/* .hoverCard:hover {
-    
-    visibility: visible;
-} */
-.film_card:hover, .frontCard{
+
+.film_card:hover .hoverCard, .film_card:hover, .frontCard{
     display: block;
 }
 
