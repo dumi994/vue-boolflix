@@ -29,10 +29,11 @@ const app = new Vue({
            //Errore quando la pagina non carica
            }).catch(e =>{
                 this.error = "Ops, si è verificato un'errore con il server" + e
-                /* console.error(e); */
+                console.error(e);
            })
         },
     },
     mounted(){
+        
     }
 })
