@@ -31,7 +31,7 @@ main{
 }
 .film_card, .series_card{
     width:170px;
-    height: 270px;
+    height: 253px;
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
@@ -47,3 +47,20 @@ main{
     flex-wrap: wrap;
     justify-content: center;
 }
+
+/* POSTER SECTION */
+.frontCard img{
+    width:100%;
+    height: 100%;
+}
+.frontCard:hover{
+   display: none;
+}
+
+.hoverCard{
+    display: none;
+}
+.hoverCard:hover{
+    display: inline-block;
+}
+

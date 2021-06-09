@@ -20,44 +20,49 @@
             <div class="card_container">
                 <!-- SEZIONE FILM -->
                 <div class="film_card" v-for="film in films"> 
-                    <!-- Poster del film -->
-                    <img :src="'https://image.tmdb.org/t/p/w92/' + film.poster_path" alt="">
-                    <!-- Titolo del film / se il titolo attuale è uguale a quello originale, mostrarne uno solo  -->
-                    <h3>{{film.title}}</h3>
-                    <div v-if="film.title != film.original_title">
-                        <h3>{{film.original_title}}</h3>
+
+                    <div class="frontCard">
+                        <!-- Poster del film -->
+                        <img :src="'https://image.tmdb.org/t/p/w154/' + film.poster_path" alt="">
                     </div>
-                    <!-- Voto del film -->
-                    <h5>{{film.vote_average}}</h5>
-                    <!-- Bandiera paese originale -->
-                    <h6>{{film.original_language}}</h6>
-                    <!-- Se la lingua originale è en, trasformare in gb -->
-                    <div v-if="film.original_language == 'en'">
-                        <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
-                    </div>
-                    <!-- Se la lingua originale è ja, trasformare in jp -->
-                    <div v-else-if="film.original_language == 'ja'">
-                        <img :src="'https://www.countryflags.io/jp/shiny/32.png'">
-                    </div>
-                    <!-- Se la lingua originale è us, trasformare in gb -->
-                    <div v-else-if="film.original_language == 'us'">
-                        <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
-                    </div>
-                    <!-- Se la lingua originale è ko, trasformare in kr -->
-                    <div v-else-if="film.original_language == 'ko'">
-                        <img :src="'https://www.countryflags.io/kr/shiny/32.png'">
-                    </div>
-                    <!--Se la lingua originale è hi, trasformare in in  -->
-                    <div v-else-if="film.original_language == 'hi'">
-                        <img :src="'https://www.countryflags.io/in/shiny/32.png'">
-                    </div>
-                    <!-- Altrimenti mostrare quella originale -->
-                    <div v-else>
-                        <img :src="'https://www.countryflags.io/' + film.original_language + '/shiny/32.png'">
+
+                    <div class="hoverCard">
+                            <!-- Titolo del film / se il titolo attuale è uguale a quello originale, mostrarne uno solo  -->
+                        <h3>{{film.title}}</h3>
+                        <div v-if="film.title != film.original_title">
+                            <h3>{{film.original_title}}</h3>
+                        </div>
+                        <!-- Voto del film -->
+                        <h5>{{film.vote_average}}</h5>
+                        <!-- Bandiera paese originale -->
+                        <h6>{{film.original_language}}</h6>
+                        <!-- Se la lingua originale è en, trasformare in gb -->
+                        <div v-if="film.original_language == 'en'">
+                            <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
+                        </div>
+                        <!-- Se la lingua originale è ja, trasformare in jp -->
+                        <div v-else-if="film.original_language == 'ja'">
+                            <img :src="'https://www.countryflags.io/jp/shiny/32.png'">
+                        </div>
+                        <!-- Se la lingua originale è us, trasformare in gb -->
+                        <div v-else-if="film.original_language == 'us'">
+                            <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
+                        </div>
+                        <!-- Se la lingua originale è ko, trasformare in kr -->
+                        <div v-else-if="film.original_language == 'ko'">
+                            <img :src="'https://www.countryflags.io/kr/shiny/32.png'">
+                        </div>
+                        <!--Se la lingua originale è hi, trasformare in in  -->
+                        <div v-else-if="film.original_language == 'hi'">
+                            <img :src="'https://www.countryflags.io/in/shiny/32.png'">
+                        </div>
+                        <!-- Altrimenti mostrare quella originale -->
+                        <div v-else>
+                            <img :src="'https://www.countryflags.io/' + film.original_language + '/shiny/32.png'">
+                        </div>
                     </div>
                     
                 </div>
-                
             </div>
             <!-- //SEZIONE FILM -->
             
