@@ -33,7 +33,7 @@
                     <div v-else-if="film.original_language == 'us'">
                         <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
                     </div>
-                    <div v-else="film.original_language != 'en' && film.original_language != 'us' && film.original_language != 'ja'">
+                    <div v-else>
                         <img :src="'https://www.countryflags.io/' + film.original_language + '/shiny/32.png'">
                     </div>
                     
