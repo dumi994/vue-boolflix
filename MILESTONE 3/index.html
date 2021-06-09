@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Boolflix</title>
+</head>
+<body>
+    <div id="app">
+        <nav class="navigator">
+            <img src="netflix.png" alt="">
+            <div id="form" class="cerca"> 
+                <input type="search" id="query1" v-model="query" name="q" placeholder="Cerca film o serie tv">
+                <button @click="cercaFilm()">Cerca</button>
+            </div>
+        </nav>
+        <main>
+            <div class="card_container">
+                <div class="film_card" v-for="film in films"> 
+                    <!-- <div v-if="film.title === film.original_title"></div>  -->
+                    <!-- <img :src="'https://image.tmdb.org/t/p' + film.poster_path" alt=""> -->
+                    <h2>{{film.title}}</h2>
+                    <h3>{{film.original_title}}</h3>
+                    <h3>{{film.vote_average}}</h3>
+                    <h4>{{film.original_language}}</h4>
+                    <div v-if="film.original_language == 'en'">
+                        <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
+                    </div>
+                    <div v-else-if="film.original_language == 'ja'">
+                        <img :src="'https://www.countryflags.io/jp/shiny/32.png'">
+                    </div>
+                    <div v-else-if="film.original_language == 'us'">
+                        <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
+                    </div>
+                    <div v-else>
+                        <img :src="'https://www.countryflags.io/' + film.original_language + '/shiny/32.png'">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="tv_container">
+                <div class="series_card" v-for="serie in series">  
+                    <h2>{{serie.name}}</h2>
+                    <h3>{{serie.original_name}}</h3>
+                    <h4>{{serie.original_language}}</h4>
+                    <h3>{{serie.vote_average}}</h3>
+                    <!-- <img :src="'https:www.countryflags.io/' + serie.original_language + '/shiny/32.png'"> -->
+                    <div v-if="serie.original_language == 'en'">
+                        <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
+                    </div>
+                    <div v-else-if="serie.original_language == 'ja'">
+                        <img :src="'https://www.countryflags.io/jp/shiny/32.png'">
+                    </div>
+                    <div v-else-if="serie.original_language == 'us'">
+                        <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
+                    </div>
+                    <div v-else>
+                        <img :src="'https://www.countryflags.io/' + serie.original_language + '/shiny/32.png'">
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+
+    <!-- VUEJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- AXIOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <!-- MAIN JS -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
