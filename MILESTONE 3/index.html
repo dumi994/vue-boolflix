@@ -18,17 +18,19 @@
         </nav>
         <main>
             <div class="card_container">
+                <!-- SEZIONE FILM -->
                 <div class="film_card" v-for="film in films"> 
                     <!-- Poster del film -->
                     <img :src="'https://image.tmdb.org/t/p/w92/' + film.poster_path" alt="">
                     <!-- Titolo del film / se il titolo attuale è uguale a quello originale, mostrarne uno solo  -->
-                    <h2>{{film.title}}</h2>
+                    <h3>{{film.title}}</h3>
                     <div v-if="film.title != film.original_title">
                         <h3>{{film.original_title}}</h3>
                     </div>
                     <!-- Voto del film -->
-                    <h3>{{film.vote_average}}</h3>
-                    <h4>{{film.original_language}}</h4>
+                    <h5>{{film.vote_average}}</h5>
+                    <!-- Bandiera paese originale -->
+                    <h6>{{film.original_language}}</h6>
                     <div v-if="film.original_language == 'en'">
                         <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
                     </div>
@@ -43,15 +45,22 @@
                     </div>
                     
                 </div>
+                
             </div>
+            <!-- //SEZIONE FILM -->
+            
+            <!-- SEZIONE SERIE TV -->
             <div class="tv_container">
                 <div class="series_card" v-for="serie in series">  
+                    <!-- Poster della serie -->
                     <img :src="'https://image.tmdb.org/t/p/w92/' + serie.poster_path" alt="">
+                    <!-- Titolo della serie / se il titolo è uguale al nome originale, mostrarne uno solo -->
                     <h2>{{serie.name}}</h2>
-                    <h3>{{serie.original_name}}</h3>
+                    <div v-if="serie.name != serie.original_name">
+                        <h3>{{serie.original_name}}</h3>
+                    </div>
                     <h4>{{serie.original_language}}</h4>
                     <h3>{{serie.vote_average}}</h3>
-                    <!-- <img :src="'https:www.countryflags.io/' + serie.original_language + '/shiny/32.png'"> -->
                     <div v-if="serie.original_language == 'en'">
                         <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
                     </div>
@@ -67,6 +76,7 @@
                     
                 </div>
             </div>
+            <!-- //SEZIONE SERIE TV -->
             
         </main>
     </div>
