@@ -59,8 +59,16 @@ main{
    display: none;
 }
 
-
-.film_card:hover .hoverCard, 
+.film_card:hover .hoverCard,
 .frontCard {
+    display: block;
+}
+
+.series_card:hover .frontCard,
+.hoverCard{
+    display: none;
+}
+.series_card:hover .hoverCard,
+.frontCard{
     display: block;
 }

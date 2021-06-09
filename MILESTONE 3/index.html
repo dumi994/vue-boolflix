@@ -68,41 +68,47 @@
             
             <!-- SEZIONE SERIE TV -->
             <div class="tv_container">
-                <div class="series_card" v-for="serie in series">  
-                    <!-- Poster della serie -->
-                    <img :src="'https://image.tmdb.org/t/p/w92/' + serie.poster_path" alt="">
-                    <!-- Titolo della serie / se il titolo è uguale al nome originale, mostrarne uno solo -->
-                    <h2>{{serie.name}}</h2>
-                    <div v-if="serie.name != serie.original_name">
-                        <h3>{{serie.original_name}}</h3>
+                <div class="series_card" v-for="serie in series"> 
+
+                    <div class="frontCard">
+                        <!-- Poster della serie -->
+                        <img :src="'https://image.tmdb.org/t/p/w92/' + serie.poster_path" alt="">
                     </div>
-                    <!-- Bandiera paese origine -->
-                    <h4>{{serie.original_language}}</h4>
-                    <!-- Voto della serie -->
-                    <h3>{{serie.vote_average}}</h3>
-                    <!-- Se la lingua originale è en, trasformare in gb -->
-                    <div v-if="serie.original_language == 'en'">
-                        <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
-                    </div>
-                    <!-- Se la lingua originale è ja, trasformare in jp -->
-                    <div v-else-if="serie.original_language == 'ja'">
-                        <img :src="'https://www.countryflags.io/jp/shiny/32.png'">
-                    </div>
-                    <!-- Se la lingua originale è us, trasformare in gb -->
-                    <div v-else-if="serie.original_language == 'us'">
-                        <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
-                    </div>
-                    <div v-else-if="serie.original_language == 'ko'">
-                        <img :src="'https://www.countryflags.io/kr/shiny/32.png'">
-                    </div>
-                    <!--Se la lingua originale è hi, trasformare in in  -->
-                    <div v-else-if="serie.original_language == 'hi'">
-                        <img :src="'https://www.countryflags.io/in/shiny/32.png'">
-                    </div>
-                    <!-- Altrimenti mostrare la bandiera originale -->
-                    <div v-else>
-                        <img :src="'https://www.countryflags.io/' + serie.original_language + '/shiny/32.png'">
-                    </div>
+                   <div class="hoverCard">
+                        <!-- Titolo della serie / se il titolo è uguale al nome originale, mostrarne uno solo -->
+                        <h2>{{serie.name}}</h2>
+                        <div v-if="serie.name != serie.original_name">
+                            <h3>{{serie.original_name}}</h3>
+                        </div>
+                        <!-- Bandiera paese origine -->
+                        <h4>{{serie.original_language}}</h4>
+                        <!-- Voto della serie -->
+                        <h3>{{serie.vote_average}}</h3>
+                        <!-- Se la lingua originale è en, trasformare in gb -->
+                        <div v-if="serie.original_language == 'en'">
+                            <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
+                        </div>
+                        <!-- Se la lingua originale è ja, trasformare in jp -->
+                        <div v-else-if="serie.original_language == 'ja'">
+                            <img :src="'https://www.countryflags.io/jp/shiny/32.png'">
+                        </div>
+                        <!-- Se la lingua originale è us, trasformare in gb -->
+                        <div v-else-if="serie.original_language == 'us'">
+                            <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
+                        </div>
+                        <div v-else-if="serie.original_language == 'ko'">
+                            <img :src="'https://www.countryflags.io/kr/shiny/32.png'">
+                        </div>
+                        <!--Se la lingua originale è hi, trasformare in in  -->
+                        <div v-else-if="serie.original_language == 'hi'">
+                            <img :src="'https://www.countryflags.io/in/shiny/32.png'">
+                        </div>
+                        <!-- Altrimenti mostrare la bandiera originale -->
+                        <div v-else>
+                            <img :src="'https://www.countryflags.io/' + serie.original_language + '/shiny/32.png'">
+                        </div>
+                   </div>
+                    
                     
                 </div>
             </div>
