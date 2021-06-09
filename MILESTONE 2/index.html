@@ -13,7 +13,7 @@
             <img src="netflix.png" alt="">
             <div id="form" class="cerca"> 
                 <input type="search" id="query1" v-model="query" name="q" placeholder="Cerca film o serie tv">
-                <button @click="cercaFilm">Cerca</button>
+                <button @click="cercaFilm()">Cerca</button>
             </div>
         </nav>
         <main>
@@ -21,12 +21,20 @@
                 <div class="film_card" v-for="film in films">  
                     <h2>{{film.title}}</h2>
                     <h3>{{film.original_title}}</h3>
-                    <h4>{{film.original_language}}</h4>
                     <h3>{{film.vote_average}}</h3>
-                    <div v-if="film.original_language != 'en' && film.original_language != 'us' && film.original_language != 'ja'">
+                    <h4>{{film.original_language}}</h4>
+                    <div v-if="film.original_language == 'en'">
+                        <img :src="'https:www.countryflags.io/gb/shiny/32.png'">
+                    </div>
+                    <div v-else-if="film.original_language == 'ja'">
+                        <img :src="'https:www.countryflags.io/jp/shiny/32.png'">
+                    </div>
+                    <div v-else-if="film.original_language == 'us'">
+                        <img :src="'https:www.countryflags.io/gb/shiny/32.png'">
+                    </div>
+                    <div v-else="film.original_language != 'en' && film.original_language != 'us' && film.original_language != 'ja'">
                         <img :src="'https:www.countryflags.io/' + film.original_language + '/shiny/32.png'">
                     </div>
-                   
                     
                 </div>
             </div>

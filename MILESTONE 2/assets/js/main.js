@@ -7,6 +7,7 @@ const app = new Vue({
         query: " ",
         series: " ",
         flagImg:'https://www.countryflags.io/',
+        error: null,
     },
     methods:{
         //FUNZIONE PER LA RICERCA DEL TITOLO DEL FILM
@@ -16,14 +17,23 @@ const app = new Vue({
                  
                  console.log(response.data.results);
                  this.films = response.data.results;
-                
-            }),
+                 
+                //Errore quando la pagina non carica
+            }).catch(e =>{
+                this.error = "Ops, si è verificato un'errore con il server" + e
+                console.error(e);
+           })
             //CERCA SERIE
             axios.get(`${this.uri}/search/tv?api_key=${this.api_key}&query=${this.query}`)
             .then (resp =>{
                 
                 console.log(resp.data.results);
                 this.series = resp.data.results;
+             
+           //Errore quando la pagina non carica
+           }).catch(e =>{
+                this.error = "Ops, si è verificato un'errore con il server" + e
+                console.error(e);
            })
            
 
