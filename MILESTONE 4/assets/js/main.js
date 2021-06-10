@@ -34,6 +34,13 @@ const app = new Vue({
            })
            
         },
+        getFlag(code){
+            if(code == "en")code = 'gb';
+            if(code == "ja")code = 'jp';
+            if(code == "da")code = 'dk';
+
+            return `https:www.countryflags.io/${code}/shiny/32.png`
+        }
     },
     mounted(){
         
