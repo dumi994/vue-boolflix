@@ -8,7 +8,6 @@ const app = new Vue({
         series: "",
         flagImg:'https://www.countryflags.io/',
         error: null,
-        star: '<i class="far fa-star"></i>',
     },
     methods:{
         //FUNZIONE PER LA RICERCA DEL TITOLO DEL FILM

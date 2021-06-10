@@ -33,7 +33,7 @@ main{
 .film_card, .series_card{
     width:170px;
     height: 253px;
-    background-color: white;
+    background-color: gainsboro;
     border: 1px solid black;
     border-radius: 5px;
     margin:10px;
@@ -43,7 +43,8 @@ main{
 }
 
 .series_card{
-    background-color: lightgray;
+    background-color: black;
+    
 }
 .card_container, .tv_container{
     display: flex;
@@ -56,7 +57,16 @@ main{
     background-color: black;
     color:white;
     opacity: 0.8;
+    overflow-y: scroll;
 }
+/* .serie_card .hoverCard{
+    width:100%;
+    height: 100%;
+    background-color: grey;
+    color:white;
+    opacity: 0.2;
+    overflow-y: scroll;
+} */
 .hoverCard h3, h4, h5{
     padding:10px;
 }
@@ -93,4 +103,11 @@ main{
 .img_not_found{
     line-height: 250px;
     text-align: center;
+}
+.img_not_found > img{
+    margin-top: 60px;
+    height: 100%;
+}
+.star > i{
+    color:yellow;
 }

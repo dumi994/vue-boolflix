@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Boolflix</title>
 </head>
 <body>
@@ -20,14 +23,15 @@
             <div class="card_container">
                 <!-- SEZIONE FILM -->
                 <div class="film_card" v-for="film in films"> 
-
                     <div class="frontCard">
                         <!-- Poster del film -->
                         <div v-if="film.poster_path != null">
                             <img :src="'https://image.tmdb.org/t/p/w154/' + film.poster_path" alt="">
                         </div>
                         <div v-else >
-                            <span class="img_not_found"> <strong>Error: Poster not found</strong> </span>
+                            <span class="img_not_found">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAm6dU5JsOoX02Rm2pRIq0hW6uIQ8VC8h42w&usqp=CAU" alt=""> 
+                            </span>
                         </div>
                         
                     </div>
@@ -39,7 +43,14 @@
                             <h3>{{film.original_title}}</h3>
                         </div>
                         <!-- Voto del film -->
-                        <h5>Voto: {{film.vote_average}}</h5>
+                        <div class="star">
+                            <span>Voto:</span>
+                            <i v-for="star in parseInt(film.vote_average / 2)" class="fas fa-star"></i>
+                            <i v-for="star in (5 - parseInt(film.vote_average / 2))" class="far fa-star"></i>
+                        </div>
+                        <h5>Overview: </h5>
+                        <p>{{film.overview}}</p>
+                        
                         <!-- Bandiera paese origine -->
                         
                         <div>
@@ -63,7 +74,10 @@
                             <img :src="'https://image.tmdb.org/t/p/w154/' + serie.poster_path" alt="">
                         </div>
                         <div v-else >
-                            <span class="img_not_found"><strong>Error: Poster not found</strong></span>
+                            <span class="img_not_found">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAm6dU5JsOoX02Rm2pRIq0hW6uIQ8VC8h42w&usqp=CAU"  alt="">
+                            </span>
+                            
                         </div>
                     </div>
                    <div class="hoverCard">
@@ -75,7 +89,11 @@
                         <!-- Bandiera paese origine -->
                         <h5>Lingua originale: {{serie.original_language}}</h5>
                         <!-- Voto della serie -->
-                        <h6>Voto: {{serie.vote_average}}</h3>
+                        <div class="star">
+                            <span>Voto:</span>
+                            <i v-for="star in parseInt(serie.vote_average / 2)" class="fas fa-star"></i>
+                            <i v-for="star in (5 - parseInt(serie.vote_average / 2))" class="far fa-star"></i>
+                        </div>
                         <!-- Se la lingua originale è en, trasformare in gb -->
                        <div>
                             <p>Lingua originale:</p>
