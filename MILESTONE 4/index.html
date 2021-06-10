@@ -23,7 +23,12 @@
 
                     <div class="frontCard">
                         <!-- Poster del film -->
-                        <img :src="'https://image.tmdb.org/t/p/w154/' + film.poster_path" alt="">
+                        <div v-if="film.poster_path == 'null'">
+                            <span>Image not found</span>
+                        </div>
+                        <div v-else>
+                            <img :src="'https://image.tmdb.org/t/p/w154/' + film.poster_path" alt="">
+                        </div>
                     </div>
 
                     <div class="hoverCard">
@@ -81,9 +86,9 @@
                             <h3>{{serie.original_name}}</h3>
                         </div>
                         <!-- Bandiera paese origine -->
-                        <h4>{{serie.original_language}}</h4>
+                        <h5>Lingua originale: {{serie.original_language}}</h5>
                         <!-- Voto della serie -->
-                        <h3>{{serie.vote_average}}</h3>
+                        <h6>Voto: {{serie.vote_average}}</h3>
                         <!-- Se la lingua originale è en, trasformare in gb -->
                         <div v-if="serie.original_language == 'en'">
                             <img :src="'https://www.countryflags.io/gb/shiny/32.png'">
