@@ -90,3 +90,7 @@ main{
 }
 /* /HOVER SECTION */
 
+.img_not_found{
+    line-height: 250px;
+    text-align: center;
+}

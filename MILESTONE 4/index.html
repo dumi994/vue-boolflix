@@ -23,12 +23,13 @@
 
                     <div class="frontCard">
                         <!-- Poster del film -->
-                        <div v-if="film.poster_path == 'null'">
-                            <span>Image not found</span>
-                        </div>
-                        <div v-else>
+                        <div v-if="film.poster_path != null">
                             <img :src="'https://image.tmdb.org/t/p/w154/' + film.poster_path" alt="">
                         </div>
+                        <div v-else >
+                            <span class="img_not_found"> <strong>Error: Poster not found</strong> </span>
+                        </div>
+                        
                     </div>
 
                     <div class="hoverCard">
@@ -39,7 +40,7 @@
                         </div>
                         <!-- Voto del film -->
                         <h5>Voto: {{film.vote_average}}</h5>
-                        <!-- Bandiera paese originale -->
+                        <!-- Bandiera paese origine -->
                         
                         <div>
                             <p>Lingua originale:</p>
@@ -58,8 +59,12 @@
                 <div class="series_card" v-for="serie in series"> 
 
                     <div class="frontCard">
-                        <!-- Poster della serie -->
-                        <img :src="'https://image.tmdb.org/t/p/w92/' + serie.poster_path" alt="">
+                        <div v-if="serie.poster_path != null">
+                            <img :src="'https://image.tmdb.org/t/p/w154/' + serie.poster_path" alt="">
+                        </div>
+                        <div v-else >
+                            <span class="img_not_found"><strong>Error: Poster not found</strong></span>
+                        </div>
                     </div>
                    <div class="hoverCard">
                         <!-- Titolo della serie / se il titolo è uguale al nome originale, mostrarne uno solo -->
