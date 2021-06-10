@@ -46,10 +46,15 @@ main{
     background-color: black;
     
 }
+.card_container{
+    display: inline-block;
+}
 .card_container, .tv_container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+    margin-top: 50px;
 }
 .hoverCard{
     width:100%;
@@ -69,6 +74,26 @@ main{
 } */
 .hoverCard h3, h4, h5{
     padding:10px;
+}
+.hoverCard::-webkit-scrollbar {
+    width: 5px;
+    
+}
+.hoverCard::-webkit-scrollbar-track {
+    background-color: black;
+} /* colore di sfondo delle scrollbar */
+
+.hoverCard::-webkit-scrollbar-button {
+    background-color: darkgray;
+    opacity: 0.2;
+    border-radius: 10px;
+    
+} /* codice per personalizzare i bottoni alle estremità delle scrollbars */
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    opacity: 0.6;
+    border-radius: 10px;
+    width:4px;
 }
 /* /CARD SECTION */
 
@@ -110,4 +135,13 @@ main{
 }
 .star > i{
     color:yellow;
+}
+.titolone{
+    margin:auto;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%);
+    padding:20px;
+    color: lightgrey;
 }
